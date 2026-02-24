@@ -2,6 +2,7 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
+import ReceiptScanner from './components/ReceiptScanner';
 
 // Homepage
 
@@ -10,20 +11,14 @@ function App() {
 
   return (
     <>
-      <div>
-    
-      <section>
-        <h2>Scan Receipt</h2>
-        <p>Take a photo, upload an image or drag and drop your receipt here</p>
-      </section>
-      <section>
-        {/* <h2>Contact Us</h2>
-        <p>This is the contact section.</p> */}
-      </section>
+    {/* Main */}
+    <main className="max-w-7xl mx-auto px-4 py-8">
+      <ReceiptScanner />
+    </main>
       <footer>
         <p>&copy; 2026 Receipt Keeper</p>
       </footer>
-    </div>
+    
       
     </>
   )
