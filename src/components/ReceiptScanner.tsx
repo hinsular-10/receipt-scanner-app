@@ -4,11 +4,15 @@ import { useState, useRef } from "react";
 const showCamera = async () => {
   try {
     const mediaStream = await navigator.mediaDevices.getUserMedia({
-       video: true },
-      audio: false
+       video: true ,
+      audio: false,
     });
   
+  } catch (error) {
+    console.error("Error accessing camera:", error);
   }
+};
+
 
 
 function ReceiptScanner() {
