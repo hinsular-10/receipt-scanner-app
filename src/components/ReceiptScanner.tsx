@@ -16,7 +16,7 @@ function ReceiptScanner({ onScan }: ReceiptScannerProps) {
     try {
       // Request access to the camera
       const mediaStream = await navigator.mediaDevices.getUserMedia({
-        video: { facingMode: "environment" }, // Use back camera on mobile
+        video: true, // Use default camera
         audio: false,
       });
       setStream(mediaStream);
@@ -186,7 +186,16 @@ function ReceiptScanner({ onScan }: ReceiptScannerProps) {
             <button onClick={startCamera}>Take a Photo</button>
           </div>
           {/* File Upload */}
-          <button onClick={handleFileUpload}>Upload Image</button>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleFileUpload}
+            style={{ display: 'none' }}
+            id="file-upload"
+          />
+          <button onClick={() => document.getElementById('file-upload')?.click()}>
+            Upload Image
+          </button>
         </div>
       </section>
       <p>Take a photo, upload an image or drag and drop your receipt here</p>
